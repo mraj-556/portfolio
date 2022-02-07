@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        #content{
+            width: 99vw;
+            height: 100vh;
+            background: url("{{url_for('static',filename='techbg1.jpg')}}");
+            background-size:cover ;
+            background-position: 0px -120px ;
+        }
+        #content #des{
+            background: url("{{url_for('static',filename='machinelearningbg.jpg')}}");
+            background-position: 0px 150px ;
+            color: white;
+            font-size: 30px;
+            height: 40px;
+            font-family: serif;
+            max-height: 40px;
+            width: 170vh;
+            border-bottom: 5px solid white;
+            border-radius: 20px;
+            border-top: 5px solid black;
+            padding-left: 20%;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        #content #profile{
+            /* background: url("{{url_for('static',filename='WhatsApp Image 2022-01-16 at 9.46.40 PM.jpeg')}}"); */
+            background: url("{{url_for('static',filename='speechpng.png')}}");
+            background-size: cover;
+            border: 1.5px solid cyan;
+            border-radius: 50%;
+            min-width: 25%;
+            min-height: 55%;
+            position: absolute;
+            left: 14.4%;
+            top: 23.6%;
+        }
+        #content #name{
+            font-size: 40px;
+            color: cyan;
+            text-shadow:1.5px 1.5px cyan;
+            font-weight:bold;
+            text-align: center;
+            /* border: 3px solid black;  */
+            height: 30px;
+            width:auto;
+            position: absolute;
+            left: 50%;
+            top: 45%;
+        }
+        #content #describe {
+            width: 770px;
+            font-size: 20px;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: 300;
+            color: aqua;
+            height: auto;
+            position: absolute;
+            left: 42%;
+            top: 55%;
+        }
+        #content #describe #sec{
+            color: red;
+            font-style: oblique;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-weight: bold;
+        }
+        #content #describe #fir{
+            color: pink;
+            font-size: 50px;
+            font-weight: bold;
+        }
+        #next{
+            font-size:20px;
+            /* text-align: center; */
+            padding-top: 6px;
+            padding-left: 8px;
+            font-weight: bold;
+            background: transparent;
+            height: 27px;
+            width: 82px;
+            border: 1px solid white;
+            border-radius: 35%;
+            position: absolute;
+            right: 8%;
+            top: 49%;
+        }
+        a{
+            color: yellow;
+            text-decoration: none;
+        }
+        .load{
+			width: 100vw;
+			height: 120vh;
+			text-align: center;
+			padding-top: 45vh;
+			font-size: 3em;
+			z-index: 9999;
+			position: absolute;
+			background: black;
+		}
+        @keyframes fadeout{
+			0%{
+				transform: scale(1.0);
+			}
+			10%{
+				transform: scaleX(0.9);
+			}
+			20%{
+				transform: scaleY(0.9);
+			}
+			30%{
+				transform: scaleX(0.8);
+			}
+			40%{
+				transform: scaleY(0.8);
+			}
+			50%{
+				transform: scaleX(0.6);
+			}
+			60%{
+				transform: scaleY(0.6);
+			}
+			70%{
+				transform: scaleX(0);
+			}
+			100%{
+				opacity: 0;
+				transform: scaleY(0);
+			}
+		}
+    </style>
+</head>
+<body>
+    <div class="load">
+        Loading...
+    </div>
+    <div id="content">
+        <div id="des">THE GLANCE PAGE.....</div>
+        <div id="profile"></div>
+        <div id="next"><a href="{{url_for('homepage')}}">NEXT>></a></div>
+        <div id="name">Ashutosh Sahoo</div>
+        <div id="describe">
+            <p id="first"><span id ="fir">I</span> was one of them who always think that there are tiny humans inside the television, and seen through
+            the glass, the people are pretending like they are talking with far one through a small mobilephone. Now the old
+            doubts are cleared, with some stunning thoughts, how a machine can follow the human, if it then how. </p>
+            <br>
+
+            <p id="second">Machine learning is the stuff that always pushes me towards the word <span id ="sec"> 'HOW'</span>. This is the only thing
+                that ignited my dream to make some breath-taking stuff, with some brain-storming and cool team members, to meet
+                some genius. It's my dream to apply some unique ML logic to make something unique.
+                
+            </p>
+        </div>
+    </div>
+    <script type="text/javascript">
+        window.onload=function(){
+            a = document.getElementsByClassName("load");
+            a[0].style.animation = "fadeout 1s";
+            a[0].style.transform = "scale(0)";
+        };
+    </script>
+</body>
+</html>

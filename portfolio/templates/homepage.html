@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PORTFOLIO</title>
+
+    <style type="text/css">
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        body{
+            height : 100vh;
+            /* background:url('/home/ashutosh/Desktop/project/portfolio/imgages/wood1.jpg') ; */
+            background:url("{{url_for('static',filename='darkwoodentext.jpg')}}") ;
+            background-size: cover;
+        }
+        #header{
+            background:url("{{url_for('static',filename='website top bg.jpeg')}}") ;
+            border-bottom: 3px solid white;
+            display: flex;
+            height: 180px;
+            width: 100vw;
+        }
+        #header h1{
+            font-size: 30px;
+            font-weight:bold;
+            color: darkorange;
+            margin-top: 120px;
+            margin-left: 150px;
+        }
+        #header h2{
+            font-size: 50px;
+            font-weight:bold;
+            color: cyan;
+            margin-top: 30px;
+            text-align: center;
+            transform: translateX(25%);
+            font-style: italic;
+            
+        }
+        #header img{
+            border: 2px solid white;
+            border-radius: 50%;
+            margin-left: 20px;
+        }
+        #header u{
+            color: yellow;
+        }
+        #container #bio{
+            font-size: 20px;
+            color: white;
+            font-weight: bold;
+            padding:98px 65px;
+            background:black ;
+            border: 15px solid rgb(65, 38, 2);
+            border-radius: 25px;
+            margin-left: 140px;
+            margin-top: 10px;
+        }
+        #container #project{
+            font-size: 20px;
+            color: white;
+            font-weight: bold;
+            padding:98px 65px;
+            background:black ;
+            border: 15px solid rgb(65, 38, 2);
+            border-radius: 25px;
+            margin-left: 200px;
+            margin-top: 10px;
+        }
+        #container #blog{
+            font-size: 20px;
+            color: white;
+            font-weight: bold;
+            padding:98px 83px;
+            background:black ;
+            border: 15px solid rgb(65, 38, 2);
+            border-radius: 25px;
+            margin-left: 200px;
+            margin-top: 10px;
+        }
+        #container #about{
+            font-size: 20px;
+            color: white;
+            font-weight: bold;
+            padding:98px 73px;
+            background:black ;
+            border: 15px solid rgb(65, 38, 2);
+            border-radius: 25px;
+            margin-left: 140px;
+            margin-top: 50px;
+        }
+        #container #feed{
+            font-size: 20px;
+            color: white;
+            font-weight: bold;
+            padding:98px 60px;
+            background:black ;
+            border: 15px solid rgb(65, 38, 2);
+            border-radius: 25px;
+            margin-left: 195px;
+            margin-top: 50px;
+
+        }
+        #container #contact{
+            font-size: 20px;
+            color: white;
+            font-weight: bold;
+            padding:98px 65px;
+            background:black ;
+            border: 15px solid rgb(65, 38, 2);
+            border-radius: 25px;
+            margin-left: 200px;
+            margin-top: 50px;
+
+        }
+        #container #bio:hover{
+            box-shadow: 0 5px 5px 0 #15f4ee inset,0 5px 50px 0 #15f4ee;
+            font-family:cursive;
+            text-shadow: 0 5px 5px rgb(196, 231, 0);
+        }
+        #container #project:hover{
+            box-shadow: 0 5px 5px 0 #15f4ee inset,0 5px 50px 0 #15f4ee;
+            font-family:cursive;
+            text-shadow: 0 5px 5px rgb(196, 231, 0);
+        }
+        #container #blog:hover{
+            box-shadow: 0 5px 5px 0 #15f4ee inset,0 5px 50px 0 #15f4ee;
+            font-family:cursive;
+            text-shadow: 0 5px 5px rgb(196, 231, 0);
+        }
+        #container #about:hover{
+            box-shadow: 0 5px 5px 0 #15f4ee inset,0 5px 50px 0 #15f4ee;
+            font-family:cursive;
+            text-shadow: 0 5px 5px rgb(196, 231, 0);
+        }
+        #container #feed:hover{
+            box-shadow: 0 5px 5px 0 #15f4ee inset,0 5px 50px 0 #15f4ee;
+            font-family:cursive;
+            text-shadow: 0 5px 5px rgb(196, 231, 0);
+        }
+        #container #contact:hover{
+            box-shadow: 0 5px 5px 0 #15f4ee inset,0 5px 50px 0 #15f4ee;
+            font-family:cursive;
+            text-shadow: 0 5px 5px rgb(196, 231, 0);
+        }
+    </style>
+
+</head>
+<body>
+
+        <!-- ############################# Top ###################################### -->
+
+    <div id="header">
+        <img src="{{url_for('static',filename='speechpng.png')}}" alt="Avatar">
+        <u><h2>WELCOME TO MY PORTFOLIO</h2></u>
+        <h1>~ Ashutosh Sahoo</h1>
+    </div>
+    
+        <!-- ############################# container ###################################### -->
+
+    <div id="container">
+        <a href="{{url_for('bio')}}"><button id="bio">
+            Biodata
+        </button></a>
+        <a href="{{url_for('project')}}"><button id="project">
+            Project
+        </button></a>
+        <a href="{{url_for('blog')}}"><button id="blog">
+            Blog
+        </button></a>
+        <a href="{{url_for('about')}}"><button id="about">
+            About
+        </button></a>
+        <a href="{{url_for('feed')}}"><button id="feed">
+            Feedback
+        </button></a>
+        <a href="{{url_for('contact')}}"><button id="contact">
+            Contact
+        </button></a>
+
+    </div>
+
+    <div id="footer">
+
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bio</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        #content{
+            background: black;
+            height: 100vh;
+            width: 100vw;
+        }
+        #address{
+            margin-top: 10%;
+        }
+        #content #b2 button{
+            color: black;
+            font-weight: bold;
+            margin-left: 40%;
+        }
+        button{
+            font-size: 20px;
+            font-weight: bold;
+            border: 3px solid red;
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+        <a id="b2" href="{{url_for('address')}}"><button id="address">Address</button></a><br><br>
+        <a id="b2" href="{{url_for('education')}}"><button id="education">Education</button></a><br><br>
+        <a id="b2" href="{{url_for('achieve')}}"><button id="achieve">Achievement</button></a><br><br>
+        <a id="b2" href="{{url_for('skill')}}"><button id="skill">Skill</button></a><br><br>
+        <a id="b2" href="{{url_for('hobby')}}"><button id="hobby">Hobbies</button></a><br><br>
+    </div>
+</body>
+</html>
+
+menuentry 'Windows Recovery Environment (on /dev/sda4)' --class windows --class os $menuentry_id_option 'osprober-chain-592C85254E2CD0B7' {
+    insmod part_msdos
+    insmod ntfs
+    set root='hd0,msdos4'
+    if [ x$feature_platform_search_hint = xy ]; then
+      search --no-floppy --fs-uuid --set=root --hint-bios=hd0,msdos4 --hint-efi=hd0,msdos4 --hint-baremetal=ahci0,msdos4  592C85254E2CD0B7
+    else
+      search --no-floppy --fs-uuid --set=root 592C85254E2CD0B7
+    fi
+    parttool ${root} hidden-
+    drivemap -s (hd0) ${root}
+    chainloader +1
+    ntldr /bootmgr
+}
